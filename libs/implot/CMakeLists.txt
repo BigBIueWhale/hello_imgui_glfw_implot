@@ -5,4 +5,3 @@ add_library(implot STATIC
             implot/implot.h)
 
 target_link_libraries(implot PUBLIC imgui)
-include_directories(${CMAKE_CURRENT_LIST_DIR})

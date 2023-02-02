@@ -1,4 +1,6 @@
-﻿hello_imgui_add_app (hello_imgui_glfw_implot "hello_imgui_glfw_implot.cpp" )
+﻿hello_imgui_add_app (hello_imgui_glfw_implot "hello_imgui_glfw_implot.cpp")
+
+target_link_libraries(hello_imgui_glfw_implot PRIVATE implot)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET hello_imgui_glfw_implot PROPERTY CXX_STANDARD 20)

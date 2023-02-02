@@ -45,6 +45,9 @@ endif()
 ##########################################################
 # Prepare hello_imgui during configure time
 ##########################################################
+# Enable 32-bit indices by uncommenting #define ImDrawIdx unsigned int in your ImGui imconfig.h file.
+# define ImDrawIdx unsigned int
+add_compile_definitions("ImDrawIdx=unsigned int")
 # Select your backend
 set(HELLOIMGUI_WITH_SDL OFF CACHE BOOL "" FORCE)
 set(HELLOIMGUI_WITH_GLFW ON CACHE BOOL "" FORCE)
@@ -63,6 +66,7 @@ FetchContent_MakeAvailable(hello_imgui)
 list(APPEND CMAKE_MODULE_PATH ${HELLOIMGUI_CMAKE_PATH})
 
 add_subdirectory (libs/implot)
+include_directories (libs/implot)
 
 include(hello_imgui_add_app)
 
