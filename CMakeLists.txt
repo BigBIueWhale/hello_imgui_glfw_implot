@@ -61,6 +61,9 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(hello_imgui)
 # Make cmake function `hello_imgui_add_app` available
 list(APPEND CMAKE_MODULE_PATH ${HELLOIMGUI_CMAKE_PATH})
+
+add_subdirectory (libs/implot)
+
 include(hello_imgui_add_app)
 
-add_subdirectory ("hello_imgui_glfw_implot")
+add_subdirectory (hello_imgui_glfw_implot)
